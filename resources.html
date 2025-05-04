@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Construction</title>
+    <link rel="stylesheet" href="css/resources.css">
+    <link rel="stylesheet" href="css/resource-card.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+  </head>
+  <body>
+
+    <nav class = "navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+      </a>
+      <button class = "menu-toggle" id="menu-toggle">&#8801;</button>
+      <ul class = "nav-links" id="nav-links">
+        <li><a href="index.html">My City</a></li>
+        <li><a href="construction.html">Construction</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+      <button class="log-in">Log in</button>
+    </nav>
+
+    <header class="resources-header">
+      <div class="section-banner">
+        <h2>City resources</h2>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div id="resource-list"></div>
+      </section>  
+    </main>
+    <footer>
+      <div class="city-info">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+        </p>
+      </div>
+      <div class="links">
+        <label for="quick-links">Quick links</label>
+        <ul class="quick-links">
+          <li>
+            <a href="index.html">My City</a>
+          </li>
+          <li>
+            <a href="construction.html">Construction</a>
+          </li>
+          <li>
+            <a href="resources.html">Resources</a>
+          </li>
+        </ul>
+        <button onclick="resetResources()">Reset resoures</button>
+        <button onclick="resetBuildings()">Reset buildings</button>
+      </div>
+      <div id="resources-footer-map" class="footer-map"></div>
+    </footer>
+
+    <script>
+      async function resetResources() 
+      {
+        localStorage.removeItem("resources"); // Clear old data
+        await loadResources(); // Reload fresh data from JSON
+      }
+
+      async function resetBuildings() 
+      {
+        localStorage.removeItem("buildings-available"); // Clear old data
+        await loadBuildings(); // Reload fresh data from JSON
+      }
+    </script>
+
+    <script src="js/resources.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/loadMap.js" type="module"></script>
+
+  </body>
+</html>

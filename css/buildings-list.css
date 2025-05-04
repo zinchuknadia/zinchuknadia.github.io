@@ -1,0 +1,161 @@
+.buildings-manager{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#building-filter{
+  height: 30px;
+  align-self: flex-end;
+  margin: 10px;
+  margin-right: 20px;
+}
+
+#building-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-top: 1px solid rgb(183, 183, 183);
+}
+
+.building{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(183, 183, 183);
+  border-radius: 7px;
+  box-shadow: 3px 2px 6px rgb(0, 0, 0, 0.05);
+
+}
+
+.building:hover{
+  box-shadow: 6px 5px 5px rgb(0, 0, 0, 0.1);
+}
+
+.building-banner{
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.building-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  color: black;  
+  width: 100%;
+}
+
+.building-info h4{
+  padding: 5px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.building-info p{
+  padding: 5px;
+  margin: 0px 0px 0px 5px;
+  font-size: 12px;
+}
+
+.building-resource-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.building-resource img{
+  height: 22px;
+  padding: 5px;
+  padding: 3px;
+}
+
+.building-info button{
+  padding: 5px;
+  margin: 10px;
+  width: 60px;
+  background-color: rgb(250, 197, 51);
+  border: 0px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.building-requirments{
+  display: flex;
+  flex-direction: row;
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  #building-filter{
+    margin: 3px;
+    height: 20px;
+    margin-right: 10px;
+    font-size: 8px;
+  }
+  #building-list{
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 5px;
+    max-height: 320px;
+  }
+  .building-banner{
+    height: 60px;
+    width: 60px;
+    padding: 8px;
+    border-radius: 15px;
+  }
+  .building-info h4{
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px){
+  #building-filter{
+    height: 25px;
+    font-size: 9px;
+  }
+  #building-list{
+    gap: 10px;
+    padding: 5px;
+    max-height: 310px;
+  }
+  .building-banner{
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    border-radius: 13px;
+  }
+
+}
+
+@media (min-width: 1201px){
+  .buildings-manager{
+    justify-content: unset;
+  }
+  #building-list{
+    gap: 10px;
+    padding: 9px;
+    max-height: 440px;
+  }
+  .building-banner{
+    height: 80px;
+    width: 80px;
+    padding: 6px;
+    border-radius: 15px;
+  }
+  .building-info h4{
+    font-size: 15px;
+  }
+}

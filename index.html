@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index-header.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+  </head>
+  </head>
+  <body>
+    <nav class = "navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+      </a>
+      <button class = "menu-toggle" id="menu-toggle">&#8801;</button>
+      <ul class = "nav-links" id="nav-links">
+        <li><a href="index.html">My City</a></li>
+        <li><a href="construction.html">Construction</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+      <button class="log-in">Log in</button>
+    </nav>
+    <main>
+      <header class="index-header">
+        <div id="index-map" class="map"></div>
+        <div class="header-city-info">
+          <h1>Hope Land</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+          </p>
+        </div>
+      </header>
+      <section class="city-infrastructure">
+        <label for="city-objects">Infrastructure</label>
+        <div class="list-block" id="city-objects">
+          <div class="filter-row">
+            <input type="search" id="filter-search" name="q" />
+          </div>
+          <div id="infrastructure-list"></div>
+          <div class="more-button-container">
+            <button class="more-button">More</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="city-info">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+        </p>
+      </div>
+      <div class="links">
+        <label for="quick-links">Quick links</label>
+        <ul class="quick-links">
+          <li>
+            <a href="index.html">My City</a>
+          </li>
+          <li>
+            <a href="construction.html">Construction</a>
+          </li>
+          <li>
+            <a href="resources.html">Resources</a>
+          </li>
+        </ul>
+        <button onclick="resetInfrastructure()">Reset infrastructure</button>
+      </div>
+      <div id="index-footer-map" class="footer-map"></div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/loadInfrastructure.js"></script>    
+    <script src="js/loadMap.js" type="module"></script>
+
+    <script>
+      async function resetInfrastructure() 
+      {
+        localStorage.removeItem("infrastructure");
+        localStorage.removeItem("infraCounter"); // Clear old data
+        await loadInfrastructure(); // Reload fresh data from JSON
+      }
+    </script>
+
+  </body>
+</html>
