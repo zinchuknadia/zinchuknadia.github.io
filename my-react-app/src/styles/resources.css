@@ -1,0 +1,62 @@
+.section-banner {
+  width: 100%;
+  height: 450px;
+  background-image: url(../images/banners/resources11.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 250, 250);
+  font-size: 20px;
+}
+
+.image-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+main{
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+
+#resource-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 20px;
+  gap: 6px;
+}
+
+@media (max-width: 768px){
+  main{
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  #resource-list{
+    grid-template-columns: 1fr 1fr;
+    margin: 5px;
+    gap: 3px;
+  }
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
+  main{
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+  #resource-list{
+    margin: 5px;
+    gap: 4px;
+  }
+}
+
+@media(min-width: 1025px) and (max-width: 1200px){
+  #resource-list{
+    margin: 10px;
+  }
+}

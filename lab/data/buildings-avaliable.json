@@ -118,7 +118,7 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/theatre1.webp",
+        "image": "../images/buildings/theatre4.png",
         "outlineImage": "../images/outline-buildings/theatre.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -129,7 +129,7 @@
       },
       {
         "level": 2,
-        "image": "../images/buildings/house2.jpg",
+        "image": "../images/buildings/theatre2.webp",
         "outlineImage": "../images/outline-buildings/theatre2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -140,7 +140,7 @@
       },
       {
         "level": 3,
-        "image": "../images/buildings/house2.jpg",
+        "image": "../images/buildings/theatre3.png",
         "outlineImage": "../images/outline-buildings/theatre3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },

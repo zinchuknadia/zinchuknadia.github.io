@@ -1,0 +1,137 @@
+.index-header{
+  height: 750px;
+  background: url(../images/banners/my-city10.webp);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+
+#index-map{
+  display: grid;
+  height: 650px;
+  width: 650px;
+  border: 1px solid black;
+  background-color: rgba(237, 237, 237, 0.8);
+  margin: 50px 10px 0px;
+  position: relative;
+}
+
+.grid-cell{
+  background-color: rgb(236, 236, 236);
+  border: 1px solid #a5a5a5;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.building-marker{
+  position: absolute;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+  /* border: 1px solid #444; */
+  background-repeat: no-repeat;
+  pointer-events: none; /* Optional: avoids interfering with clicks */
+}
+
+.header-city-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: self-end;
+  margin: 0px 20px 60px;
+}
+
+.header-city-info p{
+  max-width: 550px;
+  padding: 10px;
+  margin: 20px;
+  align-self: flex-end;
+  background-color: rgba(70, 70, 70, 0.3);
+}
+
+.header-city-info h1{
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px 30px;
+  align-self: flex-end;
+}
+
+@media (max-width: 768px){
+  .index-header{
+    height: 730px;
+    flex-direction: column;
+  }
+  #index-map{
+    height: 450px;
+    width: 450px;
+    margin: 70px 10px 0px;
+  }
+  .header-city-info{
+    justify-content: center;
+    align-self: center;
+    margin: 10px 10px;
+  }
+  .header-city-info p{
+    max-width: 700px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 11px;
+  }
+  .header-city-info h1{
+    align-self: flex-start;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .index-header{
+    height: 490px;
+  }
+  #index-map{
+    height: 400px;
+    width: 400px;
+    /* margin: 60px 5px 0px; */
+  }
+  .header-city-info{
+    max-width: 400px;
+    margin: 10px;
+  }
+  .header-city-info p{
+    max-width: 500px;
+    margin: 5px;
+    font-size: 11px;
+  }
+  .header-city-info h1{
+    font-size: 35px;
+    margin: 5px 20px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px){
+  .index-header{
+    height: 550px;
+  }
+  #index-map{
+    height: 470px;
+    width: 470px;
+    margin: 60px 4px 0px;
+  }
+  .header-city-info{
+    margin: 20px;
+  }
+  .header-city-info p{
+    max-width: 420px;
+    margin: 10px;
+    font-size: 13px;
+  }
+  .header-city-info h1{
+    font-size: 40px;
+    margin: 10px 20px;
+  }
+}

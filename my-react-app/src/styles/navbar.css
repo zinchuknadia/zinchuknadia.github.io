@@ -1,0 +1,130 @@
+.navbar{
+  width: 100%;
+  height: 65px;
+  background-color:rgba(23, 17, 3, 0.4);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 1px;
+}
+
+.logo h3{
+  color: whitesmoke;
+  margin-left: 8px;
+  width: 60px;
+}
+
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0px;
+}
+
+.nav-links li{
+  display: inline;
+  margin: 0px 10px;
+}
+
+.nav-links a{
+  color: rgb(255, 205, 238);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav ul a:hover{
+  color: rgb(246, 160, 246);
+  text-decoration: underline;
+}
+
+.log-in{
+  background-color: rgb(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
+  margin-right: 20px;
+  height: 40px;
+  width: 108px;
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.log-in:hover{
+  text-decoration: underline;
+}
+
+.menu-toggle{
+  display: none;
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-toggle img{
+  width: 50px;
+  height: 30px;
+}
+
+@media screen and (max-width: 768px){
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    background-color:rgb(244, 244, 244);
+    position: absoulute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  .nav-links.show{
+    display: flex;
+  }
+  .menu-toggle{
+    display: block;
+  }
+  .nav-links a{
+    font-size: 19px;
+  }
+  .log-in{
+    font-size: 19px;
+  }
+  .logo img{
+    width: 45px;
+    height: 45px;
+  }
+  .logo h3{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .log-in{
+    width: 90px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px){
+  .log-in{
+    width: 100px;
+    margin-right: 10px;
+  }
+}
