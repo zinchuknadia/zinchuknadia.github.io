@@ -8,9 +8,24 @@ export const GameDataProvider = ({ children }) => {
 
   // Завантаження з localStorage
   useEffect(() => {
-    const storedResources = JSON.parse(localStorage.getItem("resources"));
-    const storedBudget = JSON.parse(localStorage.getItem("budget"));
-
+    const storedResourcesRaw = localStorage.getItem("resources");
+    const storedBudgetRaw = localStorage.getItem("budget");
+  
+    let storedResources = [];
+    let storedBudget = null;
+  
+    try {
+      if (storedResourcesRaw) storedResources = JSON.parse(storedResourcesRaw);
+    } catch (e) {
+      console.warn("Invalid JSON in 'resources' key:", storedResourcesRaw);
+    }
+  
+    try {
+      if (storedBudgetRaw) storedBudget = JSON.parse(storedBudgetRaw);
+    } catch (e) {
+      console.warn("Invalid JSON in 'budget' key:", storedBudgetRaw);
+    }
+  
     if (storedResources && storedResources.length > 0) {
       setResources(storedResources);
     } else {
@@ -24,15 +39,15 @@ export const GameDataProvider = ({ children }) => {
           console.error("Failed to load resources from JSON:", err)
         );
     }
-
+  
     if (storedBudget !== null) {
       setBudget(storedBudget);
     } else {
-      storedBudget =
-        storedResources.find((r) => r.name === "Budget")?.quantity || 0;
-      setBudget(storedBudget);
+      const budgetResource = storedResources.find((r) => r.name === "Budget");
+      setBudget(budgetResource?.quantity || 0);
     }
   }, []);
+  
 
   // Синхронізація з localStorage
   useEffect(() => {

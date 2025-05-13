@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/footer.css";
 import CityMap from "./CityMap";
 
@@ -17,13 +18,13 @@ const Footer = () => {
         <label htmlFor="quick-links">Quick links</label>
         <ul className="quick-links">
           <li>
-            <a href="/">My City</a>
+            <Link to="/">My City</Link>
           </li>
           <li>
-            <a href="/construction">Construction</a>
+            <Link to="/construction">Construction</Link>
           </li>
           <li>
-            <a href="/resources">Resources</a>
+            <Link to="/resources">Resources</Link>
           </li>
         </ul>
       </div>

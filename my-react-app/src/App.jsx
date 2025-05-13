@@ -7,15 +7,13 @@ import { GameDataProvider } from "./contexts/GameDataContext";
 
 function App() {
   return (
-    <GameDataProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/construction" element={<Construction />} />
-        </Routes>
-      </Router>
-    </GameDataProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/construction" element={<Construction />} />
+      </Routes>
+    </Router>
   );
 }
 

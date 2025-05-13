@@ -9,23 +9,25 @@ import "../styles/index-header.css";
 import "../styles/general.css";
 import "../styles/navbar.css";
 
+import InfrastructureList from "../components/InfrastructureList.jsx";
+
 const AboutPage = () => {
-  useEffect(() => {
-    const loadScripts = async () => {
-      await import("../utils/loadInfrastructure.js");
-    };
+//   useEffect(() => {
+//     const loadScripts = async () => {
+//       await import("../utils/loadInfrastructure.js");
+//     };
 
-    loadScripts();
-  }, []);
+//     loadScripts();
+//   }, []);
 
-  const resetInfrastructure = async () => {
-    localStorage.removeItem("infrastructure");
-    localStorage.removeItem("infraCounter");
-    const { default: loadInfrastructure } = await import(
-      "../utils/loadInfrastructure.js"
-    );
-    await loadInfrastructure();
-  };
+//   const resetInfrastructure = async () => {
+//     localStorage.removeItem("infrastructure");
+//     localStorage.removeItem("infraCounter");
+//     const { default: loadInfrastructure } = await import(
+//       "../utils/loadInfrastructure.js"
+//     );
+//     await loadInfrastructure();
+//   };
 
   return (
     <>
@@ -59,14 +61,14 @@ const AboutPage = () => {
             <div className="filter-row">
               <input type="search" id="filter-search" name="q" />
             </div>
-            <div id="infrastructure-list"></div>
+              <InfrastructureList />
             <div className="more-button-container">
               <button className="more-button">More</button>
             </div>
           </div>
         </section>
       </main>
-      <Footer resetInfrastructure={resetInfrastructure} />
+      <Footer /*resetInfrastructure={resetInfrastructure}*/ />
     </>
   );
 };

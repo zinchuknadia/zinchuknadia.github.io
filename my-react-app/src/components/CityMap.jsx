@@ -18,7 +18,25 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
 
   const buildStructure = useBuildStructure();
 
-  const cellSize = 50;
+  // const cellSize = 50;
+
+  const [cellSize, setMapCell] = useState(50); // початкове значення
+
+  useEffect(() => {
+    const updateCellSize = () => {
+      if (mapRef.current) {
+        const { offsetWidth, offsetHeight } = mapRef.current;
+        const cellWidth = offsetWidth / cols;
+        const cellHeight = offsetHeight / rows;
+        const newSize = Math.floor(Math.min(cellWidth, cellHeight));
+        setMapCell(newSize);
+      }
+    };
+
+    updateCellSize();
+    window.addEventListener("resize", updateCellSize);
+    return () => window.removeEventListener("resize", updateCellSize);
+  }, []);
 
   useImperativeHandle(ref, () => ({
     placeBuilding,
