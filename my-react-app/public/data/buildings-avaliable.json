@@ -6,8 +6,8 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/house1.jpg",
-        "outlineImage": "../images/outline-buildings/house.png",
+        "image": "/assets/buildings/house1.jpg",
+        "outlineImage": "/assets/outline-buildings/house.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -17,8 +17,8 @@
       },
       {
         "level": 2,
-        "image": "../images/outline-buildings/house2.png",
-        "outlineImage": "../images/outline-buildings/house2.png",
+        "image": "/assets/outline-buildings/house2.png",
+        "outlineImage": "/assets/outline-buildings/house2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },
@@ -28,8 +28,8 @@
       },
       {
         "level": 3,
-        "image": "../images/outline-buildings/house3.png",
-        "outlineImage": "../images/outline-buildings/house3.png",
+        "image": "/assets/outline-buildings/house3.png",
+        "outlineImage": "/assets/outline-buildings/house3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },
@@ -47,8 +47,8 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/cinema1.webp",
-        "outlineImage": "../images/outline-buildings/cinema.png",
+        "image": "/assets/buildings/cinema1.webp",
+        "outlineImage": "/assets/outline-buildings/cinema.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -58,8 +58,8 @@
       },
       {
         "level": 2,
-        "image": "../images/buildings/house2.jpg",
-        "outlineImage": "../images/outline-buildings/cinema2.png",
+        "image": "/assets/buildings/house2.jpg",
+        "outlineImage": "/assets/outline-buildings/cinema2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -69,8 +69,8 @@
       },
       {
         "level": 3,
-        "image": "../images/buildings/house2.jpg",
-        "outlineImage": "../images/outline-buildings/cinema3.png",
+        "image": "/assets/buildings/house2.jpg",
+        "outlineImage": "/assets/outline-buildings/cinema3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -88,8 +88,8 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/road1.jpg",
-        "outlineImage": "../images/outline-buildings/road.png",
+        "image": "/assets/buildings/road1.jpg",
+        "outlineImage": "/assets/outline-buildings/road.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },
@@ -99,8 +99,8 @@
       },
       {
         "level": 2,
-        "image": "../images/buildings/house2.jpg",
-        "outlineImage": "../images/outline-buildings/road2.png",
+        "image": "/assets/buildings/house2.jpg",
+        "outlineImage": "/assets/outline-buildings/road2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -118,8 +118,8 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/theatre4.png",
-        "outlineImage": "../images/outline-buildings/theatre.png",
+        "image": "/assets/buildings/theatre4.png",
+        "outlineImage": "/assets/outline-buildings/theatre.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -129,8 +129,8 @@
       },
       {
         "level": 2,
-        "image": "../images/buildings/theatre2.webp",
-        "outlineImage": "../images/outline-buildings/theatre2.png",
+        "image": "/assets/buildings/theatre2.webp",
+        "outlineImage": "/assets/outline-buildings/theatre2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },
@@ -140,8 +140,8 @@
       },
       {
         "level": 3,
-        "image": "../images/buildings/theatre3.png",
-        "outlineImage": "../images/outline-buildings/theatre3.png",
+        "image": "/assets/buildings/theatre3.png",
+        "outlineImage": "/assets/outline-buildings/theatre3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -160,8 +160,8 @@
     "levels": [
       {
         "level": 1,
-        "image": "../images/buildings/theatre1.webp",
-        "outlineImage": "../images/outline-buildings/park.png",
+        "image": "/assets/buildings/theatre1.webp",
+        "outlineImage": "/assets/outline-buildings/park.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },
@@ -171,8 +171,8 @@
       },
       {
         "level": 2,
-        "image": "../images/buildings/house2.jpg",
-        "outlineImage": "../images/outline-buildings/park2.png",
+        "image": "/assets/buildings/house2.jpg",
+        "outlineImage": "/assets/outline-buildings/park2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
           { "id": 2,"emoji": "🌲", "amount": 5 },
@@ -182,8 +182,8 @@
       },
       {
         "level": 3,
-        "image": "../images/buildings/house2.jpg",
-        "outlineImage": "../images/outline-buildings/park3.png",
+        "image": "/assets/buildings/house2.jpg",
+        "outlineImage": "/assets/outline-buildings/park3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
           { "id": 2, "emoji": "🌲", "amount": 10 },

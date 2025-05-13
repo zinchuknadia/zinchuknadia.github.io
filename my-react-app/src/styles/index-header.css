@@ -1,6 +1,6 @@
 .index-header{
   height: 750px;
-  background: url(../images/banners/my-city10.webp);
+  background: url(../assets/banners/my-city10.webp);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -15,7 +15,7 @@
   width: 650px;
   border: 1px solid black;
   background-color: rgba(237, 237, 237, 0.8);
-  margin: 50px 10px 0px;
+  margin: 20px 10px 0px;
   position: relative;
 }
 

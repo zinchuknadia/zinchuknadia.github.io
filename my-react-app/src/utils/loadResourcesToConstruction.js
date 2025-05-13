@@ -117,3 +117,4 @@ async function loadResourcesToConstruction() {
   document.addEventListener('DOMContentLoaded', loadResourcesToConstruction);
   document.addEventListener('DOMContentLoaded', setupBuyButton);
 
+  export { loadResourcesToConstruction, displayResourcesToConstruction, setupBuyButton, loadBudgetToConstruction, updateBudget };

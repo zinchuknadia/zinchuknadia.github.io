@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/banners/construction10.webp);
+  background-image: url(../assets/banners/construction10.webp);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -15,8 +15,8 @@ body {
 .hero-banner {
   width: 80%;
   height: 300px;
-  margin: 110px auto;
-  background-image: url(../images/banners/construction10.webp);
+  margin: 110px auto 0px;
+  background-image: url(../assets/banners/construction10.webp); 
   background-size: cover;
   background-position: center;
   display: flex;
@@ -44,12 +44,13 @@ body {
 
 .construction-header{
   height: 650px;
+  padding-top: 90px;
 }
 
 .elements-container{
   display: flex;
   justify-content: space-evenly;
-  margin: 100px 0px 170px 0px;
+  padding: 90px 0px 170px 0px;
 }
 
 .map-container{
@@ -180,11 +181,12 @@ body {
     height: 390px;
     border-radius: 10px;
     margin: 10px;
+    padding: 15px;
   }
 
   #construction-map{
-    width: 380px;
-    height: 380px;
+    width: 360px;
+    height: 360px;
   }
 }
 

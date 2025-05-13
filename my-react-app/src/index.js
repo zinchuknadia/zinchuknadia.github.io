@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 
+import {GameDataProvider} from "./contexts/GameDataContext";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <GameDataProvider>
     <App />
-  </React.StrictMode>
+  </GameDataProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -23,9 +23,9 @@
   border-radius: 1px;
 }
 
-.logo h3{
+.logo h4{
   color: whitesmoke;
-  margin-left: 8px;
+  margin: 0px 0px 0px 8px;
   width: 60px;
 }
 
@@ -35,6 +35,11 @@
   display: flex;
   gap: 15px;
   padding: 0px;
+  margin-bottom: 0px;
+}
+
+.nav-links.active{
+  display: block;
 }
 
 .nav-links li{

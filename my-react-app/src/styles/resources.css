@@ -1,7 +1,7 @@
 .section-banner {
   width: 100%;
   height: 450px;
-  background-image: url(../images/banners/resources11.png);
+  background-image: url(../assets/banners/resources11.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -20,9 +20,9 @@
 }
 
 main{
-  padding-top: 40px;
-  padding-bottom: 20px;
   background-color: white;
+  /* padding-top: 40px;
+  padding-bottom: 20px; */
 }
 
 #resource-list{
@@ -33,10 +33,10 @@ main{
 }
 
 @media (max-width: 768px){
-  main{
+  /* main{
     padding-top: 20px;
     padding-bottom: 10px;
-  }
+  } */
   #resource-list{
     grid-template-columns: 1fr 1fr;
     margin: 5px;
@@ -45,10 +45,10 @@ main{
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
-  main{
+  /* main{
     padding-top: 30px;
     padding-bottom: 15px;
-  }
+  } */
   #resource-list{
     margin: 5px;
     gap: 4px;

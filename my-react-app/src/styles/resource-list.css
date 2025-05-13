@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-#resource-list{
+#construction-resource-list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 768px){
-  #resource-list{
+  #construction-resource-list{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 10px;
@@ -90,7 +90,7 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px){
-  #resource-list{
+  #construction-resource-list{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 5px;
@@ -103,7 +103,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1200px){
-  #resource-list{
+  #construction-resource-list{
     gap: 10px;
     padding: 5px;
     max-height: 225px;
@@ -118,7 +118,7 @@
 }
 
 @media (min-width: 1201px){
-  #resource-list{
+  #construction-resource-list{
     gap: 10px;
     padding: 10px;
     max-height: 345px;

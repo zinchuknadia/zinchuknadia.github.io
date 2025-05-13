@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "Central Park",
-    "image": "../images/buildings/cinema1.webp",
+    "image": "/assets/buildings/cinema1.webp",
     "type": "Park",
     "level": 1,
     "levels": [
     {
       "level": 1,
-      "image": "../images/buildings/house1.jpg",
+      "image": "/assets/buildings/house1.jpg",
       "neededResources": [
         { "id": 1, "amount": 10 },
         { "id": 2, "amount": 5 }
@@ -16,7 +16,7 @@
     },
     {
       "level": 2,
-      "image": "../images/buildings/house1.jpg",
+      "image": "/assets/buildings/house1.jpg",
       "neededResources": [
         { "id": 1, "amount": 15 },
         { "id": 2, "amount": 10 }
@@ -24,7 +24,7 @@
     },
     {
       "level": 3,
-      "image": "../images/buildings/house1.jpg",
+      "image": "/assets/buildings/house1.jpg",
       "neededResources": [
         { "id": 1, "amount": 15 },
         { "id": 2, "amount": 10 }

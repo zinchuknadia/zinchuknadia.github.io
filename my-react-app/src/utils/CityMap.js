@@ -1,3 +1,5 @@
+import { buildStructure } from './buildStructure.js';
+
 export default class CityMap {
   constructor(mapElementId, rows, cols) {
     this.mapElementId = mapElementId;

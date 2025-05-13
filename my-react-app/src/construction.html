@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction</title>
+    <link rel="stylesheet" href="css/construction.css">
+    <link rel="stylesheet" href="css/buildings-list.css">
+    <link rel="stylesheet" href="css/resource-list.css">
+    <link rel="stylesheet" href="css/list-block.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+  </head>
+  <body>
+
+    <nav class = "navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+      </a>
+      <button class = "menu-toggle" id="menu-toggle">&#8801;</button>
+      <ul class = "nav-links" id="nav-links">
+        <li><a href="index.html">My City</a></li>
+        <li><a href="construction.html">Construction</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+      <button class="log-in">Log in</button>
+    </nav>
+
+    <main class="overlay">
+
+      <header class="construction-header">
+        <div class="hero-banner">
+          <h1>Build Hope Land</h1>
+          <button>Start Now</button>
+        </div>
+      </header>
+
+      <div class="elements-container">
+
+        <div id="construction-map-container" class = "map-container">
+          <div id="construction-map" class="map"></div>
+        </div>
+
+        <section class="buildings-manager">
+
+          <h2>Buildings</h2>
+          <div class="building-section">
+            <input type="sear" id="building-filter" name="q" />
+            <div id="building-list"></div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <div class="elements-container">
+
+        <section class="budget-manager">
+          <h2>Budget</h2>
+          <div id="budget"></div>
+        </section>
+
+        <section class="resources-manager">
+          <h2>Resources</h2>
+          <div class="resource-section">
+            <div id="resource-list"></div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+    <footer>
+      <div class="city-info">
+        <img src="images/logo3.png" alt="Logo"/>
+        <h3>Hope Land</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.
+        </p>
+      </div>
+      <div class="links">
+        <label for="quick-links">Quick links</label>
+        <ul class="quick-links">
+          <li>
+            <a href="index.html">My City</a>
+          </li>
+          <li>
+            <a href="construction.html">Construction</a>
+          </li>
+          <li>
+            <a href="resources.html">Resources</a>
+          </li>
+        </ul>
+        <button onclick="resetResources()">Reset resoures</button>
+        <button id = "resetBuildings">Reset buildings</button>
+        <button onclick="resetInfrastructure()">Reset infrastructure</button>
+      </div>
+      <div id="construction-footer-map" class="footer-map"></div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+
+    <script src="js/buildStructure.js"></script>
+    <!-- <script type="module" src="js/CityMap.js"></script> -->
+    <!-- <script src="js/main.js" type="module"></script> -->
+
+    <!-- <script src="js/loadInfrastructure.js"></script> -->
+    <script src="js/loadMap.js" type="module"></script>
+    <script src="js/loadResourcesToConstruction.js"></script>
+
+    <script src="js/loadBuildingsToConstruction.js" type="module"></script>
+
+    <script>
+      async function resetResources() 
+      {
+        localStorage.removeItem("resources"); // Clear old data
+        await loadResourcesToConstruction(); // Reload fresh data from JSON
+      }
+
+      async function resetBuildings() 
+      {
+        localStorage.removeItem("buildings-avaliable");
+        await loadBuildingsToConstruction(); // Reload fresh data from JSON
+      }
+
+      async function resetInfrastructure() 
+      {
+        localStorage.removeItem("infrastructure");
+        localStorage.removeItem("infraCounter"); // Clear old data
+        await loadInfrastructure(); // Reload fresh data from JSON
+      }
+    </script>
+
+  </body>
+</html>

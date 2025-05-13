@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Budget",
     "emoji": "💰",
-    "image": "../images/resources/money1.png",
+    "image": "/assets/resources/money1.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 100,
     "price": 1 
@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Wood",
     "emoji": "🌲",
-    "image": "../images/resources/wood3.webp",
+    "image": "/assets/resources/wood3.webp",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 90,
     "price": 10
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Rock",
     "emoji": "🪨",
-    "image": "../images/resources/stone4.png",
+    "image": "/assets/resources/stone4.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 80,
     "price": 13
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Bricks",
     "emoji": "🧱",
-    "image": "../images/resources/bricks2.jpg",
+    "image": "/assets/resources/bricks2.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 90,
     "price": 15
@@ -39,7 +39,7 @@
     "id": 5,
     "name": "Sand",
     "emoji": "🏖️",
-    "image": "../images/resources/sand2.webp",
+    "image": "/assets/resources/sand2.webp",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 110,
     "price": 5
@@ -48,7 +48,7 @@
     "id": 6,
     "name": "Workers",
     "emoji": "👷",
-    "image": "../images/resources/worker1.jpg",
+    "image": "/assets/resources/worker1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 30,
     "price": 70
@@ -56,7 +56,7 @@
     "id": 7,
     "name": "Metal",
     "emoji": "⛓️",
-    "image": "../images/resources/sand2.webp",
+    "image": "/assets/resources/sand2.webp",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 110,
     "price": 7
@@ -65,7 +65,7 @@
     "id": 8,
     "name": "Glass",
     "emoji": "🪟",
-    "image": "../images/resources/worker1.jpg",
+    "image": "/assets/resources/worker1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 35,
     "price": 14

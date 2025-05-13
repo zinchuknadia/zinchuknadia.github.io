@@ -1,4 +1,4 @@
-.resource{
+.resource-card{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.resource label{
+.resource-card label{
   margin: 30px;
   padding: 10px;
   font-size: 45px;
@@ -53,7 +53,7 @@
 }
 
 @media (max-width: 768px){
-  .resoure{
+  .resource-card{
     padding: 5px;
     box-shadow: 2px 1px 4px rgb(0, 0, 0, 0.025);
   }
@@ -61,7 +61,7 @@
     width: 100px;
     height: 150px;
   }
-  .resource label{
+  .resource-card label{
     margin: 10px;
     padding: 5px;
     font-size: 27px;
@@ -83,7 +83,7 @@
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
-  .resoure{
+  .resource-card{
     padding: 7px;
     box-shadow: 3px 2px 5px rgb(0, 0, 0, 0.025);
   }
@@ -91,7 +91,7 @@
     width: 120px;
     height: 160px;
   }
-  .resource label{
+  .resource-card label{
     margin: 20px;
     padding: 7px;
     font-size: 30px;
@@ -117,7 +117,7 @@
     width: 150px;
     height: 200px;
   }
-  .resource label{
+  .resource-card label{
     font-size: 37px;
   }
   .resource-details{
