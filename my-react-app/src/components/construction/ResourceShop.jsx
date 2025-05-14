@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGameData } from "../../contexts/GameDataContext"; // оновити шлях при потребі
+import ResetResourcesButton from "../ResetResourcesButton";
 
 const ResourceShop = () => {
   const { resources, setResources } = useGameData();
@@ -7,6 +8,16 @@ const ResourceShop = () => {
 
   const budgetRes = resources.find((r) => r.name === "Budget");
   const budget = budgetRes?.quantity || 0;
+
+  // Reload default data from JSON
+  const loadResourcesFromJSON = async () => {
+    const response = await fetch(
+      `${process.env.PUBLIC_URL}/data/resources.json`
+    );
+    const data = await response.json();
+    localStorage.setItem("resources", JSON.stringify(data));
+    setResources(data);
+  };
 
   const handleBuy = (resourceId, price) => {
     const updated = [...resources];
@@ -41,7 +52,7 @@ const ResourceShop = () => {
   };
 
   return (
-    <div>
+    <>
       <section className="budget-manager">
         <h2>Budget</h2>
         <div id="budget">
@@ -94,10 +105,11 @@ const ResourceShop = () => {
                   </div>
                 </div>
               ))}
+            <ResetResourcesButton onReset={loadResourcesFromJSON} />
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

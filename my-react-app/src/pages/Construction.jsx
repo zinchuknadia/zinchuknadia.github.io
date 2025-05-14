@@ -48,7 +48,6 @@ const Construction = () => {
           <section className="buildings-manager">
             <h2>Buildings</h2>
             <div className="building-section">
-              <input type="search" id="building-filter" name="q" />
               <BuildingList onBuild={handleBuild} />
             </div>
           </section>

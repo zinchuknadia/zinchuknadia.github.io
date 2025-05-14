@@ -97,6 +97,7 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
 
     const newBuilding = {
       id: Date.now(),
+      buildingId: building.id,
       name: building.name,
       image: building.image,
       type: building.type || "Unknown",

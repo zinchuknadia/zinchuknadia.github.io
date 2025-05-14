@@ -1,3 +1,17 @@
+.city-feedback {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
 
 h2{
   margin: 30px 40px 10px 20px;

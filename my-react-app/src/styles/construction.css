@@ -6,8 +6,8 @@
 } */
 
 .overlay {
-  background-image: url(../assets/banners/construction10.webp), 
-                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url(../assets/banners/construction10.webp);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -53,6 +53,7 @@
 
 .elements-container{
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   padding: 90px 0px 170px 0px;
 }
@@ -169,8 +170,8 @@
   }
 
   #construction-map{
-    width: 690px;
-    height: 690px;
+    width: 650px;
+    height: 650px;
   }
 
   .elements-container{

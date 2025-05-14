@@ -89,7 +89,7 @@ export const GameDataProvider = ({ children }) => {
 
   return (
     <GameDataContext.Provider
-      value={{ resources, budget, setBudget, updateResource, deductResources }}
+      value={{ resources, setResources, budget, setBudget, updateResource, deductResources }}
     >
       {children}
     </GameDataContext.Provider>

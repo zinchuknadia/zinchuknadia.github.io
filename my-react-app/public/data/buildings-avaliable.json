@@ -2,11 +2,12 @@
   {
     "id": 1,
     "name": "House",
+    "type": "Public",
     "level": 0,
     "levels": [
       {
         "level": 1,
-        "image": "/assets/buildings/house1.jpg",
+        "image": "/assets/buildings/house2.png",
         "outlineImage": "/assets/outline-buildings/house.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -17,7 +18,7 @@
       },
       {
         "level": 2,
-        "image": "/assets/outline-buildings/house2.png",
+        "image": "/assets/buildings/house3.png",
         "outlineImage": "/assets/outline-buildings/house2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -28,7 +29,7 @@
       },
       {
         "level": 3,
-        "image": "/assets/outline-buildings/house3.png",
+        "image": "/assets/buildings/house4.png",
         "outlineImage": "/assets/outline-buildings/house3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -43,11 +44,12 @@
   {
     "id": 2,
     "name": "Cinema",
+    "type": "Public",
     "level": 0,
     "levels": [
       {
         "level": 1,
-        "image": "/assets/buildings/cinema1.webp",
+        "image": "/assets/buildings/cinema2.png",
         "outlineImage": "/assets/outline-buildings/cinema.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -58,7 +60,7 @@
       },
       {
         "level": 2,
-        "image": "/assets/buildings/house2.jpg",
+        "image": "/assets/buildings/cinema3.png",
         "outlineImage": "/assets/outline-buildings/cinema2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -69,7 +71,7 @@
       },
       {
         "level": 3,
-        "image": "/assets/buildings/house2.jpg",
+        "image": "/assets/buildings/cinema4.png",
         "outlineImage": "/assets/outline-buildings/cinema3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -84,11 +86,12 @@
   {
     "id": 3,
     "name": "Road",
+    "type": "Infrastructure",
     "level": 0,
     "levels": [
       {
         "level": 1,
-        "image": "/assets/buildings/road1.jpg",
+        "image": "/assets/buildings/road2.png",
         "outlineImage": "/assets/outline-buildings/road.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -99,7 +102,7 @@
       },
       {
         "level": 2,
-        "image": "/assets/buildings/house2.jpg",
+        "image": "/assets/buildings/road2.png",
         "outlineImage": "/assets/outline-buildings/road2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -114,11 +117,12 @@
   {
     "id": 4,
     "name": "Theatre",
+    "type": "Public",
     "level": 0,
     "levels": [
       {
         "level": 1,
-        "image": "/assets/buildings/theatre4.png",
+        "image": "/assets/buildings/theatre5.png",
         "outlineImage": "/assets/outline-buildings/theatre.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -129,7 +133,7 @@
       },
       {
         "level": 2,
-        "image": "/assets/buildings/theatre2.webp",
+        "image": "/assets/buildings/theatre3.png",
         "outlineImage": "/assets/outline-buildings/theatre2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -140,7 +144,7 @@
       },
       {
         "level": 3,
-        "image": "/assets/buildings/theatre3.png",
+        "image": "/assets/buildings/theatre4.png",
         "outlineImage": "/assets/outline-buildings/theatre3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -156,11 +160,12 @@
   {
     "id": 5,
     "name": "Park",
+    "type": "Public",
     "level": 0,
     "levels": [
       {
         "level": 1,
-        "image": "/assets/buildings/theatre1.webp",
+        "image": "/assets/buildings/park2.png",
         "outlineImage": "/assets/outline-buildings/park.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },
@@ -171,7 +176,7 @@
       },
       {
         "level": 2,
-        "image": "/assets/buildings/house2.jpg",
+        "image": "/assets/buildings/park3.png",
         "outlineImage": "/assets/outline-buildings/park2.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 10 },
@@ -182,7 +187,7 @@
       },
       {
         "level": 3,
-        "image": "/assets/buildings/house2.jpg",
+        "image": "/assets/buildings/park4.png",
         "outlineImage": "/assets/outline-buildings/park3.png",
         "neededResources": [
           { "id": 1, "emoji": "💰", "amount": 15 },

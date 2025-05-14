@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CityMap from "../components/CityMap.jsx";
+
+import CitySatisfaction from "../components/CitySatisfaction.jsx";
+import RatingForm from "../components/RatingForm.jsx";
 
 import "../styles/index.css";
 import "../styles/index-header.css";
@@ -12,23 +15,13 @@ import "../styles/navbar.css";
 import InfrastructureList from "../components/InfrastructureList.jsx";
 
 const AboutPage = () => {
-//   useEffect(() => {
-//     const loadScripts = async () => {
-//       await import("../utils/loadInfrastructure.js");
-//     };
+  const [satisfaction, setSatisfaction] = useState(70); // initial value
 
-//     loadScripts();
-//   }, []);
-
-//   const resetInfrastructure = async () => {
-//     localStorage.removeItem("infrastructure");
-//     localStorage.removeItem("infraCounter");
-//     const { default: loadInfrastructure } = await import(
-//       "../utils/loadInfrastructure.js"
-//     );
-//     await loadInfrastructure();
-//   };
-
+  const handleRatingSubmit = (rating) => {
+    // Simple formula: newSatisfaction = avg of current and rating * 20
+    const newSatisfaction = Math.round((satisfaction + rating * 20) / 2);
+    setSatisfaction(newSatisfaction);
+  };
   return (
     <>
       <Navbar />
@@ -55,20 +48,26 @@ const AboutPage = () => {
             </p>
           </div>
         </header>
+
         <section className="city-infrastructure">
           <label htmlFor="city-objects">Infrastructure</label>
           <div className="list-block" id="city-objects">
-            <div className="filter-row">
-              <input type="search" id="filter-search" name="q" />
-            </div>
-              <InfrastructureList />
+            <InfrastructureList />
             <div className="more-button-container">
               <button className="more-button">More</button>
             </div>
           </div>
         </section>
+
+        <section className="city-feedback">
+          <div className="feedback-container">
+            <CitySatisfaction satisfaction={satisfaction} />
+            <RatingForm onSubmit={handleRatingSubmit} />
+          </div>
+        </section>
+
       </main>
-      <Footer /*resetInfrastructure={resetInfrastructure}*/ />
+      <Footer />
     </>
   );
 };

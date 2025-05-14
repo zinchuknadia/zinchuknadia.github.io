@@ -1,32 +1,88 @@
 import React, { useEffect, useState } from "react";
 import { useGameData } from "../../contexts/GameDataContext";
+import ResetBuildingsButton from "../ResetBuildingsButton";
 
 const BuildingList = ({ onBuild }) => {
   const [buildings, setBuildings] = useState([]);
-  const { resources, updateResources } = useGameData();
+  const [selectedTypes, setSelectedTypes] = useState(["All"]);
+  const [showMenu, setShowMenu] = useState(false);
+  const { resources } = useGameData();
+
+  const loadBuildings = async () => {
+    let stored = JSON.parse(localStorage.getItem("buildings-avaliable"));
+
+    if (!stored) {
+      const response = await fetch(
+        `${process.env.PUBLIC_URL}/data/buildings-avaliable.json`
+      );
+      stored = await response.json();
+      localStorage.setItem("buildings-avaliable", JSON.stringify(stored));
+    }
+
+    setBuildings(stored);
+  };
 
   useEffect(() => {
-    const loadBuildings = async () => {
-      let stored = JSON.parse(localStorage.getItem("buildings-avaliable"));
-
-      if (!stored) {
-        const response = await fetch(
-          `${process.env.PUBLIC_URL}/data/buildings-avaliable.json`
-        );
-        stored = await response.json();
-        localStorage.setItem("buildings-avaliable", JSON.stringify(stored));
-      }
-
-      setBuildings(stored);
-    };
-
     loadBuildings();
   }, []);
 
+  const filteredBuildings = selectedTypes.includes("All")
+    ? buildings
+    : buildings.filter((b) => selectedTypes.includes(b.type));
+
   return (
-    <div>
+    <>
+      {/* Filter button */}
+      <div className="building-filter">
+        <button onClick={() => setShowMenu((prev) => !prev)}>
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/filter.svg`}
+            alt="Filter"
+            style={{ width: "24px", height: "24px" }}
+          />
+          Filter
+        </button>
+        {showMenu && (
+          <div className="filter-menu">
+            {["All", "Infrastructure", "Commercial", "Public"].map((type) => (
+              <label
+                key={type}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  marginBottom: "0.3rem",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  value={type}
+                  checked={selectedTypes.includes(type)}
+                  onChange={() => {
+                    if (type === "All") {
+                      setSelectedTypes(["All"]);
+                    } else {
+                      setSelectedTypes((prev) => {
+                        const withoutAll = prev.filter((t) => t !== "All");
+                        if (prev.includes(type)) {
+                          const updated = withoutAll.filter((t) => t !== type);
+                          return updated.length === 0 ? ["All"] : updated;
+                        } else {
+                          return [...withoutAll, type];
+                        }
+                      });
+                    }
+                  }}
+                />
+                <span>{type}</span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+
       <div id="building-list">
-        {buildings.map((building, index) => (
+        {filteredBuildings.map((building, index) => (
           <div key={index} className="building">
             <img
               className="building-banner"
@@ -51,8 +107,9 @@ const BuildingList = ({ onBuild }) => {
             </div>
           </div>
         ))}
+        <ResetBuildingsButton onReset={loadBuildings} />
       </div>
-    </div>
+    </>
   );
 };
 

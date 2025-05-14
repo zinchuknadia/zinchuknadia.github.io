@@ -25,6 +25,7 @@
 }
 
 .resource-info img{
+  align-self: center;
   width: 200px;
   height: 250px;
   object-fit: contain;

@@ -28,8 +28,10 @@ const Navbar = () => {
         <li>
           <Link to="/resources">Resources</Link>
         </li>
+        <li>
+          <button className="log-in">Log in</button>
+        </li>
       </ul>
-      <button className="log-in">Log in</button>
     </nav>
   );
 };
