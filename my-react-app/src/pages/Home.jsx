@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CityMap from "../components/CityMap.jsx";
 
-import CitySatisfaction from "../components/CitySatisfaction.jsx";
-import RatingForm from "../components/RatingForm.jsx";
+import CitySatisfaction from "../components/home/CitySatisfaction.jsx";
+import RatingForm from "../components/home/RatingForm.jsx";
 
 import "../styles/index.css";
 import "../styles/index-header.css";
 import "../styles/general.css";
 import "../styles/navbar.css";
 
-import InfrastructureList from "../components/InfrastructureList.jsx";
+import InfrastructureList from "../components/home/InfrastructureList.jsx";
 
 const AboutPage = () => {
   const [satisfaction, setSatisfaction] = useState(70); // initial value

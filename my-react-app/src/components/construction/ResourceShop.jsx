@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { useGameData } from "../../contexts/GameDataContext"; // оновити шлях при потребі
-import ResetResourcesButton from "../ResetResourcesButton";
+import { useGameData } from "../../contexts/GameDataContext"; 
+import ResetResourcesButton from "./ResetResourcesButton";
+import ShopResource from "./ShopResource"; 
+import BudgetManager from "./ShopBudget"; 
 
 const ResourceShop = () => {
   const { resources, setResources } = useGameData();
   const [inputAmount, setInputAmount] = useState(1);
 
   const budgetRes = resources.find((r) => r.name === "Budget");
-  const budget = budgetRes?.quantity || 0;
+  // const budget = budgetRes?.quantity || 0;
 
   // Reload default data from JSON
   const loadResourcesFromJSON = async () => {
@@ -53,31 +55,12 @@ const ResourceShop = () => {
 
   return (
     <>
-      <section className="budget-manager">
-        <h2>Budget</h2>
-        <div id="budget">
-          <img
-            src={`${process.env.PUBLIC_URL}/${
-              resources.find((r) => r.name === "Budget")?.image || ""
-            }`}
-            alt="Budget"
-          />
-          <div className="budget-description">
-            <p id="budget-amount-display">${budget}</p>
-            <div className="budget-control">
-              <input
-                type="number"
-                value={inputAmount}
-                onChange={(e) => setInputAmount(parseInt(e.target.value) || 1)}
-              />
-              <div className="budget-control-buttons">
-                <button onClick={() => updateBudget("subtract")}>-</button>
-                <button onClick={() => updateBudget("add")}>+</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BudgetManager
+        budgetResource={budgetRes}
+        inputAmount={inputAmount}
+        setInputAmount={setInputAmount}
+        updateBudget={updateBudget}
+      />
 
       <section className="resources-manager">
         <h2>Resources</h2>
@@ -86,24 +69,11 @@ const ResourceShop = () => {
             {resources
               .filter((r) => r.name !== "Budget")
               .map((resource) => (
-                <div key={resource.id} className="resource">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/${resource.image}`}
-                    alt={resource.name}
-                  />
-                  <div className="resource-info">
-                    <h4>
-                      {resource.name} {resource.emoji}
-                    </h4>
-                    <p>${resource.price}</p>
-                    <p className="amount">x{resource.quantity}</p>
-                    <button
-                      onClick={() => handleBuy(resource.id, resource.price)}
-                    >
-                      Buy
-                    </button>
-                  </div>
-                </div>
+                <ShopResource
+                  key={resource.id}
+                  resource={resource}
+                  onBuy={handleBuy}
+                />
               ))}
             <ResetResourcesButton onReset={loadResourcesFromJSON} />
           </div>

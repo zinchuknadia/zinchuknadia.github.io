@@ -3,7 +3,7 @@ import React from 'react';
 const ResetInfrastructureButton = ({ onReset }) => {
   const handleClick = () => {
     localStorage.removeItem('infrastructure');
-    onReset(); // trigger reload in parent
+    onReset(); 
   };
 
   return (

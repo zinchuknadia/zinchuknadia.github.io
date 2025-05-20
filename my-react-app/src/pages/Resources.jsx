@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ResourceList from "../components/ResourceList";
+import ResourceList from "../components/resources/ResourceList";
 
 import "../styles/resources.css";
 import "../styles/resource-card.css";
@@ -10,19 +10,6 @@ import "../styles/footer.css";
 import "../styles/navbar.css";
 
 const ConstructionPage = () => {
-  // const resetResources = async () => {
-  //   localStorage.removeItem("resources");
-  //   if (window.loadResources) {
-  //     await window.loadResources();
-  //   }
-  // };
-
-  // const resetBuildings = async () => {
-  //   localStorage.removeItem("buildings-available");
-  //   if (window.loadBuildings) {
-  //     await window.loadBuildings();
-  //   }
-  // };
 
   return (
     <>
@@ -39,10 +26,7 @@ const ConstructionPage = () => {
         </section>
       </main>
 
-      <Footer
-        // onResetResources={resetResources}
-        // onResetBuildings={resetBuildings}
-      />
+      <Footer />
     </>
   );
 };

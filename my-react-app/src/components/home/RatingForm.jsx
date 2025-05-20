@@ -8,7 +8,7 @@ const RatingForm = ({ onSubmit }) => {
   const handleSubmit = () => {
     if (rating > 0) {
       onSubmit(rating);
-      setRating(0); // Reset after submit
+      setRating(0);
     }
   };
 

@@ -3,8 +3,13 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const GameDataContext = createContext();
 
 export const GameDataProvider = ({ children }) => {
-  const [resources, setResources] = useState([]);
-  const [budget, setBudget] = useState(0);
+  const [resources, setResources] = useState(() => {
+    return JSON.parse(localStorage.getItem("resources")) || [];
+  });
+  const [budget, setBudget] = useState(() => {
+    const storedBudget = localStorage.getItem("budget");
+    return storedBudget ? JSON.parse(storedBudget) : null;
+  });
 
   // Завантаження з localStorage
   useEffect(() => {
