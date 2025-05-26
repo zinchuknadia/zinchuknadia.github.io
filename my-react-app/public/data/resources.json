@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Budget",
+    "name": "Gold",
     "emoji": "💰",
     "image": "/assets/resources/money1.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
@@ -56,7 +56,7 @@
     "id": 7,
     "name": "Metal",
     "emoji": "⛓️",
-    "image": "/assets/resources/sand2.webp",
+    "image": "/assets/resources/metal1.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 110,
     "price": 7
@@ -65,7 +65,7 @@
     "id": 8,
     "name": "Glass",
     "emoji": "🪟",
-    "image": "/assets/resources/worker1.jpg",
+    "image": "/assets/resources/glass1.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin sed lorem non nunc pharetra ullamcorper.",
     "quantity": 35,
     "price": 14

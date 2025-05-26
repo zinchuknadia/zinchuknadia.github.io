@@ -1,6 +1,8 @@
 // src/pages/Construction.jsx
 import { useEffect, useRef } from "react";
 import { GameDataProvider } from "../contexts/GameDataContext";
+import { auth } from "../configuration/Firebase";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -17,7 +19,18 @@ import "../styles/general.css";
 const Construction = () => {
   const cityMapRef = useRef();
 
+  const navigate = useNavigate();
+
+  const checkAuth = () => {
+    if (!auth.currentUser) {
+      navigate("/SignUp");
+      return false;
+    }
+    return true;
+  };
+
   const handleBuild = (building) => {
+    if (!checkAuth()) return;
     const success = cityMapRef.current?.placeBuilding(building);
     if (success) {
       console.log("✅ Побудовано:", building.name);

@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
 
   const toggleMenu = () => {
     setMenuActive((prev) => !prev);
+  };
+
+  const { user } = useContext(UserContext);
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    if (user) {
+      navigate(`/user/${user.uid}`);
+    } else {
+      navigate("/SignUp");
+    }
   };
 
   return (
@@ -28,9 +40,21 @@ const Navbar = () => {
         <li>
           <Link to="/resources">Resources</Link>
         </li>
-        <li>
-          <button className="log-in">Log in</button>
-        </li>
+
+        {user ? (
+          <li>
+            <Link to={`/user/${user.uid}`} className="log-in">
+              {user.displayName || user.email}
+            </Link>
+          </li>
+        ) : (
+          <li>
+            <p onClick={handleNavigate} className="log-in">
+              Log in
+            </p>
+          </li>
+        )}
+
       </ul>
     </nav>
   );

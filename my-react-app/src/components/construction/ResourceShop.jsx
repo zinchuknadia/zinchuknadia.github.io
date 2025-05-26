@@ -1,62 +1,68 @@
 import React, { useState } from "react";
-import { useGameData } from "../../contexts/GameDataContext"; 
+import { useGameData } from "../../contexts/GameDataContext";
 import ResetResourcesButton from "./ResetResourcesButton";
-import ShopResource from "./ShopResource"; 
-import BudgetManager from "./ShopBudget"; 
+import ShopResource from "./ShopResource";
+import BudgetManager from "./ShopBudget";
+import { initializeUserResources } from "../../uploadData/uploadUserResources";
 
 const ResourceShop = () => {
-  const { resources, setResources } = useGameData();
+  const { resources, budget, updateResource } = useGameData();
   const [inputAmount, setInputAmount] = useState(1);
 
-  const budgetRes = resources.find((r) => r.name === "Budget");
-  // const budget = budgetRes?.quantity || 0;
-
-  // Reload default data from JSON
-  const loadResourcesFromJSON = async () => {
-    const response = await fetch(
-      `${process.env.PUBLIC_URL}/data/resources.json`
-    );
-    const data = await response.json();
-    localStorage.setItem("resources", JSON.stringify(data));
-    setResources(data);
+  const handleInitializeResources = async () => {
+    try {
+      await initializeUserResources();
+      alert("Resources initialized successfully");
+    } catch (error) {
+      console.error("Error initializing resources:", error);
+      alert("Failed to initialize resources");
+    }
   };
 
-  const handleBuy = (resourceId, price) => {
-    const updated = [...resources];
-    const budgetRes = updated.find((r) => r.name === "Budget");
-    const targetRes = updated.find((r) => r.id === resourceId);
+  const handleBuy = async (resourceId, price) => {
+    const budgetRes = resources.find((r) => r.id === "1"); // Gold
+    const targetRes = resources.find((r) => r.id === resourceId);
+
+    if (!budgetRes || !targetRes) {
+      alert("Resource not found");
+      return;
+    }
 
     if (budgetRes.quantity >= price) {
-      budgetRes.quantity -= price;
-      targetRes.quantity += 1;
-      setResources(updated);
+      try {
+        await updateResource("1", -price); // Deduct Gold
+        await updateResource(resourceId, 1); // Add resource
+      } catch (error) {
+        console.error("Error buying resource:", error);
+        alert("Failed to buy resource");
+      }
     } else {
-      alert("Not enough budget to buy this resource.");
+      alert("Not enough Gold to buy this resource.");
     }
   };
 
-  const updateBudget = (action) => {
-    const updated = [...resources];
-    const budgetRes = updated.find((r) => r.name === "Budget");
-
-    if (action === "add") {
-      budgetRes.quantity += inputAmount;
-    } else if (action === "subtract") {
-      if (budgetRes.quantity >= inputAmount) {
-        budgetRes.quantity -= inputAmount;
-      } else {
-        alert("Not enough budget to subtract this amount.");
-        return;
+  const updateBudget = async (action) => {
+    try {
+      if (action === "add") {
+        await updateResource("1", inputAmount);
+      } else if (action === "subtract") {
+        if (budget >= inputAmount) {
+          await updateResource("1", -inputAmount);
+        } else {
+          alert("Not enough Gold to subtract this amount.");
+          return;
+        }
       }
+    } catch (error) {
+      console.error("Error updating budget:", error);
+      alert("Failed to update budget");
     }
-
-    setResources(updated);
   };
 
   return (
     <>
       <BudgetManager
-        budgetResource={budgetRes}
+        budgetResource={resources.find((r) => r.id === "1")} // Gold as Budget
         inputAmount={inputAmount}
         setInputAmount={setInputAmount}
         updateBudget={updateBudget}
@@ -72,10 +78,13 @@ const ResourceShop = () => {
                 <ShopResource
                   key={resource.id}
                   resource={resource}
-                  onBuy={handleBuy}
+                  onBuy={() => handleBuy(resource.id, resource.price)}
                 />
               ))}
-            <ResetResourcesButton onReset={loadResourcesFromJSON} />
+            <ResetResourcesButton onReset={handleInitializeResources} />
+            <button className="upload-button" onClick={handleInitializeResources}>
+              Initialize Resources
+            </button>
           </div>
         </div>
       </section>
