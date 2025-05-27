@@ -50,7 +50,7 @@ const Navbar = () => {
         ) : (
           <li>
             <span onClick={handleNavigate} className="log-in">
-              Log in
+              SignUp
             </span>
           </li>
         )}

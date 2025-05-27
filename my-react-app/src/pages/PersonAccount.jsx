@@ -3,7 +3,15 @@ import { UserContext } from "../contexts/UserContext";
 import { db, auth } from "../configuration/Firebase";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { doc, getDoc, collection, query, where, getDocs } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  deleteDoc,
+} from "firebase/firestore";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -47,6 +55,26 @@ function PersonAccount() {
     fetchUserData();
   }, []);
 
+  // Handle building deletion
+  const handleDeleteBuilding = async (buildingId) => {
+    try {
+      // Delete the building from Firestore
+      console.log("Deleting building with ID:", buildingId);
+      const buildingDocRef = doc(db, "builtBuildings", String(buildingId));
+      await deleteDoc(buildingDocRef);
+
+      // Update local state to remove the building
+      setBuildings((prevBuildings) =>
+        prevBuildings.filter((building) => String(building.id) !== String(buildingId))
+      );
+
+      alert("Building deleted successfully.");
+    } catch (error) {
+      console.error("Error deleting building:", error.message);
+      alert("Failed to delete the building. Please try again.");
+    }
+  };
+
   function handleLogout() {
     auth
       .signOut()
@@ -85,8 +113,16 @@ function PersonAccount() {
           <h2>Your Buildings</h2>
           <ul className="item-list">
             {buildings.map((building) => (
-              <li key={building.id}>
+              <li key={building.id} className="building-item">
+                <span>
                 {building.name} (Level {building.level})
+                </span>
+                <button
+                  onClick={() => handleDeleteBuilding(building.id)}
+                  className="delete-button"
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>

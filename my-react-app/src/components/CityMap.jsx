@@ -144,6 +144,9 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
       const buildingDocRef = doc(db, "builtBuildings", `${newBuilding.id}`);
       setDoc(buildingDocRef, newBuilding);
 
+      // Update local state with the new building
+      setBuildings((prevBuildings) => [...prevBuildings, newBuilding]);
+
       // Update occupied cells
       const newOccupied = new Set(occupiedCells);
       for (let r = area.row; r < area.row + area.height; r++) {

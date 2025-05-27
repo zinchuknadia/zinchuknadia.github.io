@@ -46,6 +46,8 @@
 .item-list {
   list-style: none;
   padding-left: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .item-list li {
@@ -57,3 +59,28 @@
 .item-list li:last-child {
   border-bottom: none;
 }
+
+/* Style for the list items */
+.building-item {
+  display: flex;
+  justify-content: space-between; /* Push the button to the right */
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for the delete button */
+.delete-button {
+  padding: 5px 10px;
+  background-color: #ff4d4d; /* Similar to the logout button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+

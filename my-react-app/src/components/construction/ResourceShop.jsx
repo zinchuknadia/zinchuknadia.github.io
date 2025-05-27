@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../configuration/Firebase";
 
 import { useGameData } from "../../contexts/GameDataContext";
-import ResetResourcesButton from "./ResetResourcesButton";
+// import ResetResourcesButton from "./ResetResourcesButton";
 import ShopResource from "./ShopResource";
 import BudgetManager from "./ShopBudget";
 import { initializeUserResources } from "../../uploadData/uploadUserResources";
@@ -36,7 +36,7 @@ const ResourceShop = () => {
   const handleBuy = async (resourceId, price) => {
     if (!checkAuth()) return;
     const budgetRes = resources.find((r) => r.name === "Gold"); // Gold
-    const targetRes = resources.find((r) => r.id === resourceId);
+    const targetRes = resources.find((r) => r.id === resourceId && r.name !== "Gold");
 
     if (!budgetRes || !targetRes) {
       alert("Resource not found");
@@ -89,7 +89,7 @@ const ResourceShop = () => {
         <div className="resource-section">
           <div id="construction-resource-list">
             {resources
-              .filter((r) => r.name !== "Budget")
+              .filter((r) => r.name !== "Gold")
               .map((resource) => (
                 <ShopResource
                   key={resource.id}
@@ -97,7 +97,7 @@ const ResourceShop = () => {
                   onBuy={() => handleBuy(resource.id, resource.price)}
                 />
               ))}
-            <ResetResourcesButton onReset={handleInitializeResources} />
+            {/* <ResetResourcesButton onReset={handleInitializeResources} /> */}
             <button className="upload-button" onClick={handleInitializeResources}>
               Initialize Resources
             </button>

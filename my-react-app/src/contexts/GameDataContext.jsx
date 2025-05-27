@@ -22,7 +22,7 @@ export const GameDataProvider = ({ children }) => {
 
         // Set default resources if no user is authenticated
         if (!auth.currentUser) {
-          setResources(resourceTemplates.map((res) => ({ ...res, quantity: 100 }))); // Default quantity
+          setResources(resourceTemplates.map((res) => ({ ...res, quantity: 10 }))); // Default quantity
           return;
         }
 
@@ -39,7 +39,7 @@ export const GameDataProvider = ({ children }) => {
         // Merge templates with user quantities
         const mergedResources = resourceTemplates.map((template) => ({
           ...template,
-          quantity: userResources.find((r) => r.id === template.id)?.quantity ?? 100, // Default quantity
+          quantity: userResources.find((r) => r.id === template.id)?.quantity ?? 10, // Default quantity
         }));
         console.log("Merged resources:", mergedResources);
         setResources(mergedResources);

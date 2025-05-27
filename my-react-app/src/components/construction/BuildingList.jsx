@@ -50,7 +50,7 @@ const BuildingList = ({ onBuild }) => {
         {filteredBuildings.map((building, index) => (
           <BuildingItem key={index} building={building} onBuild={onBuild} />
         ))}
-        <ResetBuildingsButton onReset={loadBuildings} />
+        {/* <ResetBuildingsButton onReset={loadBuildings} /> */}
         <button className="upload-button" onClick={uploadBuildingsData}>
           Upload Buildings Data
         </button>
