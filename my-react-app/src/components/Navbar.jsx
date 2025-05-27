@@ -49,9 +49,9 @@ const Navbar = () => {
           </li>
         ) : (
           <li>
-            <p onClick={handleNavigate} className="log-in">
+            <span onClick={handleNavigate} className="log-in">
               Log in
-            </p>
+            </span>
           </li>
         )}
 

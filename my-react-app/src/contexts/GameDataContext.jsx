@@ -161,7 +161,7 @@ export const GameDataProvider = ({ children }) => {
   };
 
   // Budget from Gold resource
-  const budget = resources.find((r) => r.id === "1")?.quantity || 0;
+  const budget = resources.find((r) => r.name === "Gold")?.quantity || 0;
 
   return (
     <GameDataContext.Provider

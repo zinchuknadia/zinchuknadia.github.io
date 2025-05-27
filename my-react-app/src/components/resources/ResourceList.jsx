@@ -5,10 +5,12 @@ import Resource from "./Resource";
 const ResourceList = () => {
   const { resources } = useGameData();
 
+  console.log("Resources in ResourceList:", resources);
+
   return (
     <div id="resource-list">
-      {resources.map((resource, index) => (
-        <Resource key={index} resource={resource} />
+      {resources.map((resource) => (
+        <Resource key={resource.id} resource={resource} />
       ))}
     </div>
   );

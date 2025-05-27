@@ -6,6 +6,9 @@ import React, {
   useImperativeHandle,
   use,
 } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../configuration/Firebase.js";
+import { collection, getDocs } from "firebase/firestore";
 
 import { useBuildStructure } from "./buildStructure.js";
 
@@ -43,19 +46,39 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
   }));
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("infrastructure")) || [];
-    setBuildings(data);
+    const loadBuildings = async () => {
+      try {
+        const buildingsSnapshot = await getDocs(
+          collection(db, "builtBuildings")
+        );
+        const buildingsData = buildingsSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
 
-    const occupied = new Set();
-    data.forEach((b) => {
-      for (let r = b.row; r < b.row + b.height; r++) {
-        for (let c = b.col; c < b.col + b.width; c++) {
-          occupied.add(`${r}_${c}`);
-        }
+        setBuildings(buildingsData);
+
+        // Update occupied cells based on fetched buildings
+        const occupied = new Set();
+        buildingsData.forEach((b) => {
+          for (let r = b.row; r < b.row + b.height; r++) {
+            for (let c = b.col; c < b.col + b.width; c++) {
+              occupied.add(`${r}_${c}`);
+            }
+          }
+        });
+        setOccupiedCells(occupied);
+      } catch (error) {
+        console.error("Error loading buildings from Firestore:", error.message);
       }
-    });
-    setOccupiedCells(occupied);
+    };
+
+    loadBuildings();
   }, []);
+
+  useImperativeHandle(ref, () => ({
+    placeBuilding,
+  }));
 
   const handleCellClick = (r, c) => {
     const selected = { row: r, col: c };
@@ -95,11 +118,16 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
 
     if (!buildStructure(building)) return false;
 
+    const userId = auth.currentUser?.uid;
+    if (!userId) {
+      alert("User not authenticated!");
+      return false;
+    }
+
     const newBuilding = {
       id: Date.now(),
       buildingId: building.id,
       name: building.name,
-      image: building.image,
       type: building.type || "Unknown",
       level: 1,
       levels: building.levels,
@@ -108,23 +136,31 @@ const CityMap = forwardRef(({ id = "map", rows = 20, cols = 20 }, ref) => {
       width: area.width,
       height: area.height,
       builtAt: new Date().toISOString(),
+      userId,
     };
 
-    const updated = [...buildings, newBuilding];
-    setBuildings(updated);
-    localStorage.setItem("infrastructure", JSON.stringify(updated));
+    try {
+      // Write the new building to Firestore
+      const buildingDocRef = doc(db, "builtBuildings", `${newBuilding.id}`);
+      setDoc(buildingDocRef, newBuilding);
 
-    const newOccupied = new Set(occupiedCells);
-    for (let r = area.row; r < area.row + area.height; r++) {
-      for (let c = area.col; c < area.col + area.width; c++) {
-        newOccupied.add(`${r}_${c}`);
+      // Update occupied cells
+      const newOccupied = new Set(occupiedCells);
+      for (let r = area.row; r < area.row + area.height; r++) {
+        for (let c = area.col; c < area.col + area.width; c++) {
+          newOccupied.add(`${r}_${c}`);
+        }
       }
-    }
-    setOccupiedCells(newOccupied);
-    setStartCell(null);
-    setEndCell(null);
+      setOccupiedCells(newOccupied);
+      setStartCell(null);
+      setEndCell(null);
 
-    return true;
+      return true;
+    } catch (error) {
+      console.error("Error saving building to Firestore:", error.message);
+      alert("Failed to save building. Please try again.");
+      return false;
+    }
   };
 
   return (

@@ -12,15 +12,16 @@ export async function initializeUserResources() {
     // Fetch resource metadata
     const resourcesSnapshot = await getDocs(collection(db, "resources"));
     const resourceTemplates = resourcesSnapshot.docs.map((doc) => ({
-      id: doc.id,
+      id: Number(doc.id),
       name: doc.data().name,
+      quantity: Number(doc.data().quantity) || 100, // Default quantity if not specified
     }));
 
     // Initialize user resources array
     const userResources = resourceTemplates.map((res) => ({
       id: res.id,
       name: res.name,
-      quantity: 100, // Default quantity
+      quantity: res.quantity || 100, // Default quantity if not specified
     }));
 
     const userDocRef = doc(db, `users/${userId}`);
