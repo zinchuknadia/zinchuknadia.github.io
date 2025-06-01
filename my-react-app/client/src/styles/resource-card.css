@@ -1,0 +1,138 @@
+.resource-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid rgb(234, 234, 234, 0.3);
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.1);
+}
+
+.resource-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource-card label{
+  width: 85%;
+  margin: 30px;
+  padding: 10px;
+  font-size: 45px;
+  font-weight: bold;
+  display: block;
+  border-bottom: 1px solid black;
+}
+
+.resource-info img{
+  align-self: center;
+  width: 200px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.resource-details{
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quantity{
+  font-size: 23px;
+  font-weight: lighter;
+  padding: 10px;
+  margin: 10px;
+}
+
+.price{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  margin: 10px;
+}
+
+@media (max-width: 768px){
+  .resource-card{
+    padding: 5px;
+    box-shadow: 2px 1px 4px rgb(0, 0, 0, 0.025);
+  }
+  .resource-info img{
+    width: 100px;
+    height: 150px;
+  }
+  .resource-card label{
+    margin: 10px;
+    padding: 5px;
+    font-size: 27px;
+  }
+  .resource-details{
+    padding: 5px;
+    font-size: 12px;
+  }
+  .quantity{
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+  }
+  .price{
+    padding: 5px;
+    margin: 5px;
+    font-size: 21px;
+  }
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
+  .resource-card{
+    padding: 7px;
+    box-shadow: 3px 2px 5px rgb(0, 0, 0, 0.025);
+  }
+  .resource-info img{
+    width: 120px;
+    height: 160px;
+  }
+  .resource-card label{
+    margin: 20px;
+    padding: 7px;
+    font-size: 30px;
+  }
+  .resource-details{
+    padding: 7px;
+    font-size: 13px;
+  }
+  .quantity{
+    padding: 7px;
+    margin: 7px;
+    font-size: 16px;
+  }
+  .price{
+    padding: 7px;
+    margin: 7px;
+    font-size: 23px;
+  }
+}
+
+@media(min-width: 1025px) and (max-width: 1200px){
+  .resource-info img{
+    width: 150px;
+    height: 200px;
+  }
+  .resource-card label{
+    font-size: 37px;
+  }
+  .resource-details{
+    font-size: 17px;
+  }
+  .quantity{
+    font-size: 18px;
+  }
+  .price{
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1201px){
+  
+}

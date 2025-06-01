@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "House",
+    "type": "Public",
+    "level": 0,
+    "levels": [
+      {
+        "level": 1,
+        "image": "/assets/buildings/house2.png",
+        "outlineImage": "/assets/outline-buildings/house.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      },
+      {
+        "level": 2,
+        "image": "/assets/buildings/house3.png",
+        "outlineImage": "/assets/outline-buildings/house2.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 }        
+        ]
+      },
+      {
+        "level": 3,
+        "image": "/assets/buildings/house4.png",
+        "outlineImage": "/assets/outline-buildings/house3.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 }
+        ]
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Cinema",
+    "type": "Public",
+    "level": 0,
+    "levels": [
+      {
+        "level": 1,
+        "image": "/assets/buildings/cinema2.png",
+        "outlineImage": "/assets/outline-buildings/cinema.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      },
+      {
+        "level": 2,
+        "image": "/assets/buildings/cinema3.png",
+        "outlineImage": "/assets/outline-buildings/cinema2.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      },
+      {
+        "level": 3,
+        "image": "/assets/buildings/cinema4.png",
+        "outlineImage": "/assets/outline-buildings/cinema3.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Road",
+    "type": "Infrastructure",
+    "level": 0,
+    "levels": [
+      {
+        "level": 1,
+        "image": "/assets/buildings/road2.png",
+        "outlineImage": "/assets/outline-buildings/road.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 } 
+        ]
+      },
+      {
+        "level": 2,
+        "image": "/assets/buildings/road2.png",
+        "outlineImage": "/assets/outline-buildings/road2.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      }
+    ],
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Theatre",
+    "type": "Public",
+    "level": 0,
+    "levels": [
+      {
+        "level": 1,
+        "image": "/assets/buildings/theatre5.png",
+        "outlineImage": "/assets/outline-buildings/theatre.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      },
+      {
+        "level": 2,
+        "image": "/assets/buildings/theatre3.png",
+        "outlineImage": "/assets/outline-buildings/theatre2.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 } 
+        ]
+      },
+      {
+        "level": 3,
+        "image": "/assets/buildings/theatre4.png",
+        "outlineImage": "/assets/outline-buildings/theatre3.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      }
+    ],
+    "available": true
+  }
+  ,
+  {
+    "id": 5,
+    "name": "Park",
+    "type": "Public",
+    "level": 0,
+    "levels": [
+      {
+        "level": 1,
+        "image": "/assets/buildings/park2.png",
+        "outlineImage": "/assets/outline-buildings/park.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 } 
+        ]
+      },
+      {
+        "level": 2,
+        "image": "/assets/buildings/park3.png",
+        "outlineImage": "/assets/outline-buildings/park2.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 10 },
+          { "id": 2,"emoji": "🌲", "amount": 5 },
+          { "id": 4,"emoji": "🧱", "amount": 9 },
+          { "id": 6,"emoji": "👷", "amount": 7 }
+        ]
+      },
+      {
+        "level": 3,
+        "image": "/assets/buildings/park4.png",
+        "outlineImage": "/assets/outline-buildings/park3.png",
+        "neededResources": [
+          { "id": 1, "emoji": "💰", "amount": 15 },
+          { "id": 2, "emoji": "🌲", "amount": 10 },
+          { "id": 3, "emoji": "🪨", "amount": 6 },
+          { "id": 6, "emoji": "👷", "amount": 7 } 
+        ]
+      }
+    ],
+    "available": true
+  }
+]

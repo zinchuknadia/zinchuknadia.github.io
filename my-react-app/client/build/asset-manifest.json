@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7e22de6c.css",
+    "main.js": "./static/js/main.6826a701.js",
+    "static/media/resources11.png": "./static/media/resources11.47894d70a4548dd08f9b.png",
+    "static/media/my-city10.webp": "./static/media/my-city10.e75da4bcc74eb4f21cb7.webp",
+    "static/media/construction10.webp": "./static/media/construction10.184c57fc4869deea2d4f.webp",
+    "index.html": "./index.html",
+    "main.7e22de6c.css.map": "./static/css/main.7e22de6c.css.map",
+    "main.6826a701.js.map": "./static/js/main.6826a701.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e22de6c.css",
+    "static/js/main.6826a701.js"
+  ]
+}
